@@ -1,0 +1,11 @@
+h1 {
+    color: #080801;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 2em;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0px auto;
+}

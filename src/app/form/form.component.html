@@ -1,0 +1,82 @@
+<div class="card-container">
+    <div class="header">
+        <div class="headercell">
+            <img src="./assets/image/mof.png" class="header-image" />
+        </div>
+    </div>
+
+    <!-- Form -->
+
+    <div class="container">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="card-deck card-style shadow p-3 mb-5 bg-white rounded">
+                <div class="card bg-primary bg-dark">
+                    <div class="card-body text-center">
+                        <div class="tab" style="display: block;">
+                            <p> Name:
+                                <input placeholder="Enter your name please." class="form-control"
+                                    formcontrolname="name">
+                            </p>
+                            <p class="content1">
+                                <i class="blink1"></i>Mobile Number (for SMS Notification):
+                                <input type="tel" placeholder="__/___" class="form-control"
+                                    formcontrolname="mobileNumber" maxlength="11">
+                            </p>
+                            <p> CNIC:
+                                <input type="tel" class="form-control" required="true" minlength="15" maxlength="13"
+                                    placeholder="__/__/_" formcontrolname="cnic">
+                            </p>
+                          
+                        </div>
+                        <div class="tab" style="display: block;"><b>Select Documents Type:</b>
+                            <p>
+                                <input type="hidden" required="" class=" invalid">
+                                <input type="hidden" required="" class=" invalid">
+                            </p>
+                            <div class="list-group  card-style  shadow rounded">
+                                <a class="list-group-item list-group-item-action"
+                                    (click)="showEducationDetails = !showEducationDetails">Education Document</a>
+
+                                <div *ngIf="showEducationDetails" class="light-black-bg">
+                                    <label class="form-check-label document" >
+                                        <input type="checkbox" formControlName="education.hssc"> HSSC
+                                    </label>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" formControlName="education.hssc"> SSC
+                                    </label>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" formControlName="education.hssc"> BS/BBA
+                                    </label>
+                                </div>
+
+                                <a class="list-group-item list-group-item-action" (click)="showMarraigeDetails = !showMarraigeDetails">Marraige Certificate</a>
+                                <div *ngIf="showMarraigeDetails" class="light-black-bg">
+                                    <label class="form-check-label document" >
+                                        <input type="checkbox" formControlName="education.hssc"> Nikka Nama
+                                    </label>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" formControlName="education.hssc"> Marraige Certificate
+                                    </label>
+                                    <label class="form-check-label">
+                                        <input type="checkbox" formControlName="education.hssc"> Divcorce
+                                    </label>
+                                </div>
+
+                                <a class="list-group-item list-group-item-action">Business Document</a>
+                                <a class="list-group-item list-group-item-action">Documents</a>
+                                <a class="list-group-item list-group-item-action">Documents</a>
+                            </div>
+                        </div>
+
+                        <div style="overflow:auto;">
+                            <div style="float:right;">
+                                <button type="submit" class="bg-btn btn btn-primary btn-lg active"
+                                    onclick="nextPrev(1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
